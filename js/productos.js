@@ -194,13 +194,13 @@ function actualizarPrecio() {
     if (contienePersonalizado) {
         switch (frecuencia) {
             case "2 veces":
-                precioTexto = "💰 Costo: $15.000 (personalizado)";
-                break;
-            case "3 veces":
                 precioTexto = "💰 Costo: $17.000 (personalizado)";
                 break;
-            case "Pase libre":
+            case "3 veces":
                 precioTexto = "💰 Costo: $20.000 (personalizado)";
+                break;
+            case "Pase libre":
+                precioTexto = "💰 Costo: $23.000 (personalizado)";
                 break;
             default:
                 precioTexto = "";
@@ -208,13 +208,13 @@ function actualizarPrecio() {
     } else {
         switch (frecuencia) {
             case "2 veces":
-                precioTexto = "💰 Costo: $13.000 (no personalizado)";
-                break;
-            case "3 veces":
                 precioTexto = "💰 Costo: $15.000 (no personalizado)";
                 break;
-            case "Pase libre":
+            case "3 veces":
                 precioTexto = "💰 Costo: $17.000 (no personalizado)";
+                break;
+            case "Pase libre":
+                precioTexto = "💰 Costo: $20.000 (no personalizado)";
                 break;
             default:
                 precioTexto = "";

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos - PowerFit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
+
+    
+
+</head>
+<body>
+
+    <header>
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>EG GYM</h1>
+        <h3>Guías personalizadas</h3>
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">INICIO</a>
+    <a href="productos.html">PRODUCTOS</a>
+    <a href="info.html">CONTACTO</a>
+    
+</nav>
+
+<button onclick="verCarrito()" class="boton-carrito">
+    <i class="fas fa-shopping-bag"></i> Ver Carrito
+</button>
+    <section>
+        <h2>Guías disponibles</h2>
+        <div id="productosContainer" class="productos-grid"></div>
+    </section>
+
+    <div id="overlayCarrito" class="overlay-carrito" onclick="cerrarPanel()"></div>
+
+    <div id="panelCarrito" class="panel-lateral">
+    <div class="panel-header">
+        <span onclick="cerrarPanel()" class="cerrar-panel">✖</span>
+        <h3>🛒 Mi Carrito</h3>
+    </div>
+
+    <ul id="listaCarrito"></ul>
+
+<!-- 🔷 Formulario completo para plan personalizado -->
+<!-- 🔷 Formulario completo para plan personalizado -->
+<div id="formularioPersonalizado" style="display:none;">
+    <h3>Encuesta para plan personalizado</h3>
+    <form id="formEncuesta">
+        <input type="text" placeholder="Nombre y Apellido" name="nombre" required><br>
+        <input type="number" placeholder="Edad" name="edad" required><br>
+
+        <label>¿Tenés alguna lesión?</label>
+        <select name="lesiones" onchange="toggleDetalle(this, 'detalleLesiones')" required>
+            <option value="No">No</option>
+            <option value="Sí">Sí</option>
+        </select><br>
+        <input type="text" id="detalleLesiones" name="detalleLesiones" placeholder="Detalle de lesiones" style="display:none;"><br>
+
+        <label>¿Tenés alguna enfermedad?</label>
+        <select name="enfermedades" onchange="toggleDetalle(this, 'detalleEnfermedades')" required>
+            <option value="No">No</option>
+            <option value="Sí">Sí</option>
+        </select><br>
+        <input type="text" id="detalleEnfermedades" name="detalleEnfermedades" placeholder="Detalle de enfermedades" style="display:none;"><br>
+
+        <label>¿Practicás algún deporte?</label>
+        <select name="deporte" onchange="toggleDetalle(this, 'detalleDeporte')" required>
+            <option value="No">No</option>
+            <option value="Sí">Sí</option>
+        </select><br>
+        <input type="text" id="detalleDeporte" name="detalleDeporte" placeholder="Detalle del deporte" style="display:none;"><br>
+
+        <input type="text" name="datosExtra" placeholder="Datos a tener en cuenta (alergias, medicación, etc)"><br>
+
+        <label>Frecuencia de entrenamiento:</label>
+        <select name="frecuencia" required onchange="actualizarPrecio()">
+            <option value="2 veces">2 veces</option>
+            <option value="3 veces">3 veces</option>
+            <option value="Pase libre">Pase libre</option>
+        </select><br>
+        <!-- 🔥 CAMBIAMOS este id -->
+        <div id="precioPlanPersonalizado" class="precio-plan"></div>
+
+        <input type="text" name="objetivo" placeholder="¿Cuál es tu objetivo?" required><br>
+
+        <button type="button" onclick="cancelarCompra()" class="btn-secundario">Cancelar compra</button>
+        <button type="button" onclick="finalizarCompra()">Finalizar compra por WhatsApp</button>
+    </form>
+</div>
+
+<!-- 🔴 Formulario reducido para plan NO personalizado -->
+<div id="formularioFrecuencia" style="display:none;">
+    <h3>Seleccionar frecuencia de entrenamiento</h3>
+    <form id="formFrecuencia">
+        <label>Frecuencia de entrenamiento:</label>
+        <select name="frecuenciaSimple" required onchange="actualizarPrecio()">
+            <option value="2 veces">2 veces</option>
+            <option value="3 veces">3 veces</option>
+            <option value="Pase libre">Pase libre</option>
+        </select><br>
+        <!-- 🔥 CAMBIAMOS este id también -->
+        <div id="precioPlanSimple" class="precio-plan"></div>
+
+        <button type="button" onclick="cancelarCompra()" class="btn-secundario">Cancelar compra</button>
+        <button type="button" onclick="finalizarCompra()">Finalizar compra por WhatsApp</button>
+    </form>
+</div>
+
+
+<div id="modalDetalle" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal()">← Volver</span>
+        <h3 id="modalNombre"></h3>
+        <p id="modalDescripcion"></p>
+        <button onclick="agregarAlCarritoDesdeModal()">Agregar al carrito</button>
+    </div>
+</div>
+
+<!-- Botones flotantes -->
+<div class="botones-flotantes">
+    <a href="https://wa.me/5493874654202" class="boton-flotante whatsapp" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/tu_usuario/" class="boton-flotante instagram" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+</div>
+
+
+<footer>
+    &copy; 2025 EG GYM - Todos los derechos reservados
+</footer>
+
+<script src="js/productos.js"></script>
+
+
+</body>
+</html>

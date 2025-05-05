@@ -259,7 +259,7 @@ Aquí está mi información:
 - Frecuencia de entrenamiento: ${datos.frecuencia}
 - Objetivo: ${datos.objetivo}`;
 
-    const whatsappLink = `https://wa.me/5493874654202?text=${encodeURIComponent(mensaje)}`;
+    const whatsappLink = `https://wa.me/5493872249717?text=${encodeURIComponent(mensaje)}`;
     window.open(whatsappLink, "_blank");
 }
 

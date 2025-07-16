@@ -911,3 +911,18 @@ body {
     animation: reboteFlash 1.2s infinite;
 }
 
+.promo-cinta {
+    background-color: #fee71a;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.promo-cinta .texto-movible {
+    animation: moverTexto 10s linear infinite;
+    display: inline-block;
+    padding-left: 100%;
+}

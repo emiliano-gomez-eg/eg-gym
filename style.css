@@ -898,3 +898,16 @@ body {
     color: white;
 }
 
+.boton-promo {
+    background-color: #fee71a;
+    color: black;
+    border: none;
+    padding: 4px 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-left: 10px;
+    cursor: pointer;
+    animation: reboteFlash 1.2s infinite;
+}
+
